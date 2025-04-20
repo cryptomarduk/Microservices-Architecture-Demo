@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microservices-demo-ingress
+  namespace: microservices
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    # For SSL (optional)
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  # TLS configuration (optional)
+  # tls:
+  # - hosts:
+  #   - microservices-demo.example.com
+  #   secretName: microservices-demo-tls
+  rules:
+  - host: microservices-demo.example.com  # Change to your domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: api-gateway
+            port:
+              number: 80
