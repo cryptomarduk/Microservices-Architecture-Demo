@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-service-config
+  namespace: microservices
+data:
+  JWT_EXPIRES_IN: "1h"
+  LOG_LEVEL: "info"
