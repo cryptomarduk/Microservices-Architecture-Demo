@@ -2,7 +2,6 @@
 
 This project demonstrates a microservices architecture running on Kubernetes. It includes service discovery, load balancing, and API Gateway implementation with multiple services communicating with each other.
 
-![Microservices Architecture Diagram](./docs/microservices-architecture.png)
 
 ## Project Overview
 
